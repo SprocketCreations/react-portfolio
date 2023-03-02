@@ -14,13 +14,15 @@ export default function PageContact() {
 
 	const [hasName, setHasName] = useState(true);
 	const [hasEmail, setHasEmail] = useState(true);
+	const [emailIsValid, setEmailIsValid] = useState(true);
 	const [hasMessage, setHasMessage] = useState(true);
 
 	const verifyContactName = () => {
-		setHasName(contactName !== "");
+		setHasName( contactName !== "");
 	};
 	const verifyContactEmail = () => {
 		setHasEmail(contactEmail !== "");
+		setEmailIsValid(/^[\w\.-]+@([\w-]+\.)+[\w-]{2,8}$/g.test(contactEmail));
 	};
 	const verifyContactMessage = () => {
 		setHasMessage(contactMessage !== "");
@@ -30,9 +32,12 @@ export default function PageContact() {
 	const submit = event => {
 		event.preventDefault();
 
-		setContactName("");
-		setContactEmail("");
-		setContactMessage("");
+		if (hasName && hasEmail && emailIsValid && hasMessage) {
+			console.log("form accepted")
+			setContactName("");
+			setContactEmail("");
+			setContactMessage("");
+		}
 	};
 	return (
 		<main className="page-contact">
@@ -48,6 +53,7 @@ export default function PageContact() {
 
 					<span>
 						<label htmlFor="contact-email">Email</label>
+						{emailIsValid || <span>Invalid</span>}
 						{hasEmail || <span>Required</span>}
 					</span>
 					<input type="email" id="contact-email" value={contactEmail} onBlur={verifyContactEmail} onChange={event => setContactEmail(event.target.value)} />
