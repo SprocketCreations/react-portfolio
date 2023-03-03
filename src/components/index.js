@@ -5,3 +5,5 @@ export {default as PageAbout} from "./page-about";
 export {default as PagePortfolio} from "./page-portfolio";
 export {default as PageContact} from "./page-contact";
 export {default as PageResume} from "./page-resume";
+
+export {default as ProjectCard} from "./project-card";
