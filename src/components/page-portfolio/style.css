@@ -8,3 +8,10 @@
 
 	gap: 1em;
 }
+
+@media screen and (max-width: 1070px) {
+	.page-portfolio>section {
+		flex-direction: column;
+		flex-wrap: nowrap;
+	}
+}

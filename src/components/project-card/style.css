@@ -85,3 +85,20 @@
 	box-shadow: inset 0 0 3px 3px black;
 	color: var(--text-dark);
 }
+
+
+
+@media screen and (max-width: 550px) {
+	.project-card>article>h2::after {
+		opacity: 1;
+	}
+
+	.project-card>article>a {
+		margin-top: 0;
+		font-size: calc(3vw);
+	}
+
+	.project-card>article>h2 {
+		font-size: calc(10vw);
+	}
+}
