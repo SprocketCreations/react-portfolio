@@ -5,6 +5,7 @@
 
 .page-contact>section {
 	width: 50%;
+	min-width: 408px;
 }
 
 .page-contact>section>form {
@@ -39,4 +40,11 @@
 .page-contact>section>form>span>button {
 	padding: .5em 1em;
 	align-self: flex-end;
+}
+
+@media screen and (max-width: 440px) {
+	.page-contact>section {
+		width: 100%;
+		min-width: initial;
+	}
 }
