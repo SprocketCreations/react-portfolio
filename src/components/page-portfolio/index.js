@@ -16,42 +16,36 @@ const projects = [
 	{
 		id: 1,
 		image: RENT_A_TRUCK_PREVIEW,
-		alt: "",
 		name: "Rent-a-Truck",
 		deployedURI: "https://rent-a-truck.herokuapp.com/",
 		repoURI: "https://github.com/SprocketCreations/truck-rental",
 	}, {
 		id: 2,
 		image: GIT_GOOD_PREVIEW,
-		alt: "",
 		name: "Git Good",
 		deployedURI: "https://sprocketcreations.github.io/git-good/arena/",
 		repoURI: "https://github.com/SprocketCreations/git-good",
 	}, {
 		id: 3,
 		image: PERSONAL_WEBSITE_PREVIEW,
-		alt: "",
 		name: "Personal Website",
 		deployedURI: "https://www.parallaxarchive.com/portfolio",
 		repoURI: undefined,
 	}, {
 		id: 4,
 		image: NODE_TAKER_PREVIEW,
-		alt: "",
 		name: "Node Taker",
 		deployedURI: "https://nodetaker.herokuapp.com/",
 		repoURI: "https://github.com/SprocketCreations/node-taker",
 	}, {
 		id: 5,
 		image: TECH_BLOG_PREVIEW,
-		alt: "",
 		name: "Tech Blog",
 		deployedURI: "https://edx-tech-blog.herokuapp.com/",
 		repoURI: "https://github.com/SprocketCreations/tech-blog",
 	}, {
 		id: 6,
 		image: WEATHER_DASHBOARD_PREVIEW,
-		alt: "",
 		name: "Weather Dashboard",
 		deployedURI: "https://sprocketcreations.github.io/weather-dashboard/",
 		repoURI: "https://github.com/SprocketCreations/weather-dashboard",
@@ -62,10 +56,9 @@ export default function PagePortfolio() {
 	return (
 		<main className="page page-portfolio">
 			<section>
-				{projects.map(({ id, image, alt, name, deployedURI, repoURI }) =>
+				{projects.map(({ id, image, name, deployedURI, repoURI }) =>
 					<ProjectCard key={id}
 						image={image}
-						alt={alt}
 						name={name}
 						deployedURI={deployedURI}
 						repoURI={repoURI} />)}
