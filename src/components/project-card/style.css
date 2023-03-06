@@ -1,0 +1,44 @@
+.project-card {
+	background-repeat: no-repeat;
+	background-size: cover;
+
+	text-decoration: none;
+
+	display: flex;
+	flex-direction: column;
+
+	flex: 1 1 40%;
+
+	aspect-ratio: 2;
+}
+
+.project-card>article {
+	background: linear-gradient(rgba(0, 0, 0, 0), black);
+	padding: 1em 2em;
+	margin: 0;
+	
+	height: 100%;
+	width: 100%;
+
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+}
+
+.project-card:hover>article {
+	box-shadow: inset 0 0 20px 10px black;
+}
+
+.project-card>article>h2 {
+	font-size: 4em;
+}
+
+.project-card>article>h2::after {
+	transition-duration: 100ms;
+	content: " ▷";
+	opacity: 0;
+}
+
+.project-card:hover>article>h2::after {
+	opacity: 1;
+}

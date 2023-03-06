@@ -1,4 +1,5 @@
 import React from "react";
+import "./style.css";
 
 /**
  * @typedef ProjectCardProps The props for a ProjectCard element.
@@ -15,12 +16,17 @@ import React from "react";
  * @returns {JSX.Element}
  */
 export default function ProjectCard({ key, image, alt, name, deployedURI, repoURI }) {
+	const style = {
+		article: {
+			backgroundImage: `url(${image})`,
+		}
+	}
 	return (
-		<article key={key}>
-			<img src={image} alt={alt} />
-			<h3>{name}</h3>
-			{<a href={deployedURI} target="_blank">Deployed</a>}
-			{<a href={repoURI} target="_blank">Repository</a>}
-		</article>
+		<a href={deployedURI} target="_blank" className="project-card" style={style.article} key={key}>
+			<article>
+				<h2>{name}</h2>
+				{repoURI && <a href={repoURI} target="_blank">Repository</a>}
+			</article>
+		</a>
 	);
 }
