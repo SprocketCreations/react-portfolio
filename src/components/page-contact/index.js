@@ -65,7 +65,9 @@ export default function PageContact() {
 					<textarea name="message" id="contact-message" cols="30" rows="10" onBlur={verifyContactMessage}
 						value={contactMessage} onChange={event => setContactMessage(event.target.value)}></textarea>
 
-					<button action="submit">Send</button>
+					<span>
+						<button action="submit">Send</button>
+					</span>
 				</form>
 			</section>
 		</main>

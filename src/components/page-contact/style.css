@@ -21,3 +21,13 @@
 .page-contact>section>form>label:not(:first-child) {
 	margin-top: 1.5em;
 }
+
+.page-contact>section>form>span {
+	text-align: end;
+}
+
+.page-contact>section>form>span>button {
+	margin-top: 1.5em;
+	margin-bottom: 1.5em;
+	padding: .5em 1em;
+}
