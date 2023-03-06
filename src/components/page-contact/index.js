@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useState } from "react";
 import "./style.css";
 
 
@@ -12,28 +12,50 @@ export default function PageContact() {
 	const [contactEmail, setContactEmail] = useState("");
 	const [contactMessage, setContactMessage] = useState("");
 
+	const isContactName = () => contactName !== "";
+	const isContactEmail = () => contactEmail !== "";
+	const isContactEmailValid = () => /^[\w\.-]+@([\w-]+\.)+[\w-]{2,8}$/g.test(contactEmail);
+	const isContactMessage = () => contactMessage !== "";
+
 	const [hasName, setHasName] = useState(true);
 	const [hasEmail, setHasEmail] = useState(true);
 	const [emailIsValid, setEmailIsValid] = useState(true);
 	const [hasMessage, setHasMessage] = useState(true);
 
+	const [contactSent, setContactSent] = useState(false);
+
 	const verifyContactName = () => {
-		setHasName(contactName !== "");
+		const hasName = isContactName();
+		setHasName(hasName);
+		return hasName;
 	};
 	const verifyContactEmail = () => {
-		setHasEmail(contactEmail !== "");
-		setEmailIsValid(/^[\w\.-]+@([\w-]+\.)+[\w-]{2,8}$/g.test(contactEmail));
+		const hasEmail = isContactEmail();
+		const emailIsValid = isContactEmailValid();
+		setHasEmail(hasEmail);
+		setEmailIsValid(emailIsValid);
+		return hasEmail && emailIsValid;
 	};
 	const verifyContactMessage = () => {
-		setHasMessage(contactMessage !== "");
+		const hasMessage = isContactMessage();
+		setHasMessage(hasMessage);
+		return hasMessage;
 	};
 
 	/** @param {SubmitEvent} event */
-	const submit = event => {
+	const submit = async event => {
 		event.preventDefault();
 
-		if (hasName && hasEmail && emailIsValid && hasMessage) {
-			console.log("form accepted")
+		//These are on seperate lines to prevent short circuiting.
+		const a = verifyContactName();
+		const b = verifyContactEmail();
+		const c = verifyContactMessage();
+
+		if (a && b && c) {
+			setContactSent(true);
+
+			setTimeout(() => setContactSent(false), 4000);
+
 			setContactName("");
 			setContactEmail("");
 			setContactMessage("");
@@ -67,6 +89,7 @@ export default function PageContact() {
 
 					<span>
 						<button action="submit">Send</button>
+						{contactSent && <p>Your message has been sent.</p>}
 					</span>
 				</form>
 			</section>

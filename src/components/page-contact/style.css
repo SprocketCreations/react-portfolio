@@ -23,11 +23,20 @@
 }
 
 .page-contact>section>form>span {
-	text-align: end;
+	margin-top: 1.5em;
+	margin-bottom: 1.5em;
+
+	display: flex;
+	flex-direction: row-reverse;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.page-contact>section>form>span>* {
+	margin: 0;
 }
 
 .page-contact>section>form>span>button {
-	margin-top: 1.5em;
-	margin-bottom: 1.5em;
 	padding: .5em 1em;
+	align-self: flex-end;
 }
