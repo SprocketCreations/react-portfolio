@@ -24,16 +24,17 @@
 }
 
 .main-footer>ul>li>a {
+	white-space: nowrap;
 	text-decoration: none;
 	color: var(--text-light);
-	
+
 	font-size: 1.125em;
-	
+
 	margin: 0;
 	padding: 0;
 	padding-left: 0.5em;
 	padding-right: 0.5em;
-	
+
 	height: 100%;
 
 	display: flex;
@@ -43,4 +44,15 @@
 
 .main-footer>ul>li>a:hover {
 	background-color: var(--color-secondary-3-dark);
+}
+
+@media screen and (max-width: 300px) {
+	.main-footer{
+		overflow-x: scroll;
+		overflow-y: hidden;
+	}
+
+	.main-footer>ul {
+		justify-content: initial;
+	}
 }
