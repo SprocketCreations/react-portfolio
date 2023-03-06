@@ -51,3 +51,9 @@
 
 	list-style-type: none;
 }
+
+@media screen and (max-width: 300px) {
+	.download-button {
+		font-size: calc(10vw);
+	}
+}
