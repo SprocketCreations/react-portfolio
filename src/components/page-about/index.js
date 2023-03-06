@@ -1,11 +1,16 @@
 import React from "react";
 import "./style.css";
 
+import avatar from "../../images/avatar.png";
+
 export default function PageAbout() {
 	return (
 		<main className="page page-about">
-			<img src="https://placekitten.com/200/300" alt="" />
-			<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Id, optio temporibus officia consectetur aperiam veritatis quaerat expedita deleniti enim architecto itaque deserunt non debitis. Molestias doloribus cupiditate assumenda animi cum.</p>
+			<article>
+				<img src={avatar} alt="Drawing of a Kerbal aircraft marshaller from Kerbal Space Program" />
+				<p>Kailen James is a software developer set on making websites that change the way user interact with the internet. A huge fan of React and Node, he is capable of building user friendly webapps that meet any number of criteria.</p>
+				<p>He is largely self taught, but did study at a twelve week fullstack bootcamp hosted by the University of Washington.</p>
+			</article>
 		</main>
 	);
 }
