@@ -31,6 +31,7 @@
 }
 
 .main-header>nav>ul {
+
 	margin: 0;
 	padding: 0;
 
@@ -50,6 +51,8 @@
 }
 
 .main-header>nav>ul>li>a {
+	white-space: nowrap;
+
 	text-decoration: none;
 	color: var(--text-light);
 	font-size: 1.25em;
@@ -68,4 +71,31 @@
 
 .main-header>nav>ul>li>a:hover {
 	background-color: var(--color-primary-dark);
+}
+
+@media screen and (max-width: 700px) {
+	.main-header>nav {
+		padding: 0;
+		display: block;
+	}
+
+	.main-header>nav>h1 {
+		display: none;
+	}
+
+	.main-header>nav>ul {
+		justify-content: space-evenly;
+	}
+
+}
+
+@media screen and (max-width: 440px) {
+	.main-header>nav {
+		overflow-x: scroll;
+		overflow-y: hidden;
+	}
+
+	.main-header>nav>ul {
+		justify-content: initial;
+	}
 }
