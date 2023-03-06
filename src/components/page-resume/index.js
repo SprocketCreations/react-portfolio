@@ -15,12 +15,13 @@ export default function PageResume() {
 		<main className="page page-resume">
 			<article>
 				<h2>Resume</h2>
-				<a href="http://">Download</a>
+				<a className="download-button" href="http://">Download</a>
 			</article>
 			<article>
-				<h3>Skills</h3>
+				<h2>Skills</h2>
+				<hr/>
 				<ol>
-					{proficiencies.map(skill => <li>{skill}</li>)}
+					{proficiencies.map(skill => <li><h3>{skill}</h3></li>)}
 				</ol>
 			</article>
 		</main>
