@@ -40,7 +40,7 @@ export default function PageContact() {
 		}
 	};
 	return (
-		<main className="page-contact">
+		<main className="page page-contact">
 			<section>
 				<h2>Send me a message 👇</h2>
 

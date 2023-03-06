@@ -12,7 +12,7 @@ const proficiencies = [
 
 export default function PageResume() {
 	return (
-		<main className="page-resume">
+		<main className="page page-resume">
 			<article>
 				<h2>Resume</h2>
 				<a href="http://">Download</a>
