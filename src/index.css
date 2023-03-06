@@ -28,6 +28,39 @@
 	color: white;
 }
 
+*:focus-visible {
+	outline-offset: 2px;
+	outline-style: dashed;
+	outline-color: white;
+	outline-width: 3px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+	background-color: var(--color-neutral-2);
+
+	border-style:inset;
+
+	border-color: var(--color-neutral-3);
+	border-width: 1px;
+}
+
+input[type="text"]:hover,
+input[type="email"]:hover,
+textarea:hover {
+	border-style:solid;
+}
+
+button {
+	background-color: var(--color-secondary-1);
+	border: none;
+}
+
+button:hover {
+	background-color: var(--color-secondary-1-dark);
+}
+
 body {
 	background-color: var(--color-neutral-1);
 

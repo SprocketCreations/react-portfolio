@@ -1,8 +1,23 @@
-.page-main {
-	background-color: red;
+.page-contact {
+	display: flex;
+	justify-content: space-around;
+}
+
+.page-contact>section {
+	width: 50%;
 }
 
 .page-contact>section>form {
 	display: flex;
 	flex-direction: column;
+}
+
+.page-contact>section>form>label {
+
+	display: flex;
+	justify-content: space-between;
+}
+
+.page-contact>section>form>label:not(:first-child) {
+	margin-top: 1.5em;
 }

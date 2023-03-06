@@ -18,7 +18,7 @@ export default function PageContact() {
 	const [hasMessage, setHasMessage] = useState(true);
 
 	const verifyContactName = () => {
-		setHasName( contactName !== "");
+		setHasName(contactName !== "");
 	};
 	const verifyContactEmail = () => {
 		setHasEmail(contactEmail !== "");
@@ -51,17 +51,17 @@ export default function PageContact() {
 					</label>
 					<input type="text" id="contact-name" value={contactName} onBlur={verifyContactName} onChange={event => setContactName(event.target.value)} />
 
-					<span>
-						<label htmlFor="contact-email">Email</label>
-						{emailIsValid || <span>Invalid</span>}
+					<label htmlFor="contact-email">
+						<span>Email</span>
+						{hasEmail && (emailIsValid || <span>Invalid</span>)}
 						{hasEmail || <span>Required</span>}
-					</span>
+					</label>
 					<input type="email" id="contact-email" value={contactEmail} onBlur={verifyContactEmail} onChange={event => setContactEmail(event.target.value)} />
 
-					<span>
-						<label htmlFor="contact-message">Message</label>
+					<label htmlFor="contact-message">
+						<span>Message</span>
 						{hasMessage || <span>Required</span>}
-					</span>
+					</label>
 					<textarea name="message" id="contact-message" cols="30" rows="10" onBlur={verifyContactMessage}
 						value={contactMessage} onChange={event => setContactMessage(event.target.value)}></textarea>
 
