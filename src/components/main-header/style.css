@@ -43,11 +43,11 @@
 }
 
 .main-header>nav>ul>li>a.active-tab {
-	background-color: var(--color-secondary-4);
+	background-color: var(--color-neutral-1);;
 }
 
 .main-header>nav>ul>li>a.active-tab:hover {
-	background-color: var(--color-secondary-4-dark);
+	background-color: var(--color-neutral-2);
 }
 
 .main-header>nav>ul>li>a {
